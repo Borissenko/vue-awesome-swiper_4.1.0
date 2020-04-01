@@ -87,7 +87,7 @@
         .swiper-slide-duplicate-next {}
         */
         .swiper-slide {
-          width: 160px; /*ширина слайда */
+          width: 60px !important; /*ширина слайда */
           height: 150px; /*высота слайда */
 
           text-align: center;
