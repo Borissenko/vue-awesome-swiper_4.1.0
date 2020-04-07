@@ -62,7 +62,7 @@
     swiper-container-horizontal" - функция непонятна
     */
     .swiper-container {
-      width: 60%; /* 100%- по умолчанию */
+      width: 60%; /* 100%- по умолчанию. ВАЖНО ПРОПИСАТЬ КОНКРЕТНУЮ, не % (!) */
       height: 200px; /* auto- по умолчанию. Надо прописывать самому(!) */
       border: #a8a8a8 3px solid;
     }
@@ -87,7 +87,7 @@
         .swiper-slide-duplicate-next {}
         */
         .swiper-slide {
-          width: 60px !important; /*ширина слайда */
+          width: 60px !important; /*ширина слайда (ВАЖНО ПРОПИСАТЬ КОНКРЕТНУЮ, равную ширене .swiper-container(!) */
           height: 150px; /*высота слайда */
 
           text-align: center;
