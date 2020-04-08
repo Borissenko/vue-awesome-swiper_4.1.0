@@ -1,17 +1,22 @@
 <template>
   <div>
-    <simple-photo-carusel/>
+    <simple-photo-carusel :imgs="data.imgs"/>
 
-    <div class="date">20.12.2020</div>
-    <div class="title">Title here</div>
-    <div class="description">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet animi assumenda at consequuntur, cumque
-      dignissimos dolorum eligendi eum fuga iure iusto magnam magni maxime nam nihil nostrum provident quam sit soluta
-      tempora, ut velit voluptates! Assumenda cupiditate excepturi illo laboriosam laudantium omnis ullam. Accusamus
-      eligendi molestiae non nulla porro quas quasi sequi, tempora! Adipisci corporis, deleniti dolore eligendi, eos hic
-      id impedit officia praesentium quibusdam quidem quis, reprehenderit sint voluptatem voluptates! Ad aliquam cum
-      dolorem dolores doloribus excepturi magni molestias mollitia omnis quas ratione reiciendis sapiente, sint sunt
-      voluptatem. Aspernatur dolorem ex minima mollitia veniam. Beatae dolorum hic quo.
+    <div class="date"
+         :style="{marginTop: data.style.marginDate + 'px'}"
+    >
+      {{data.news.date}}
+    </div>
+    <div class="title"
+         :style="{marginTop: data.style.marginTitle + 'px'}"
+    >
+      {{data.news.title}}
+    </div>
+    <div v-clampy="data.style.clampy"
+         class="text"
+         :style="{marginTop: data.style.marginText + 'px'}"
+    >
+      {{data.news.text}}
     </div>
   </div>
 </template>
@@ -24,6 +29,12 @@
     components: {
       simplePhotoCarusel
     },
+    props: {
+      data: {
+        type: Object,
+        required: true
+      },
+    }
   }
 </script>
 
@@ -39,15 +50,17 @@
   }
 
   .date {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .title {
-    margin-top: 10px;
+    margin-top: 15px;
     color: $bg_blue;
+    font-weight: 900;
   }
 
-  .description {
-    margin-top: 15px;
+  .text {
+    margin-top: 25px;
   }
 </style>
+

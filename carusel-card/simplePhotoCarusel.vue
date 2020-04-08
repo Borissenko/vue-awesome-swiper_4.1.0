@@ -6,8 +6,11 @@
       @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
     >
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="index in 6" :key="index">
-          <span>Slide {{ index }}</span>
+        <div v-for="(img, index) in imgs"
+             :key="index"
+             class="swiper-slide"
+             :style="{backgroundImage: 'url('+img+')'}"
+        >
         </div>
       </div>
       <div class="swiper-pagination swiper-pagination-bullets"></div>
@@ -17,6 +20,11 @@
 <script>
   export default {
     name: "simplePhotoCarosel",
+    props: {
+      imgs: {
+        type: Array
+      }
+    },
     data: () => ({
       swiperOptions: {
         loop: true,
@@ -61,19 +69,8 @@
     width: 100%;
     height: 100%;
 
-    /*for dev*/
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    background-color: #eee;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 </style>
+
