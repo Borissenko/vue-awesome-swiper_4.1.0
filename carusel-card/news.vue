@@ -97,8 +97,10 @@
     height: 547px;  /*  высота карусели. */
   /*  Высота слайдера- height: 100%;, */
   /*поэтому он выжимает все остальное содержимое карты вниз, за пределы контейнера карты.*/
-  /*  Это содержимое покрываем маргином-барром.*/
-    margin-bottom: 294px;   /*требуемая высота карты минус высота слайдера, 841−547=294*/
+  /*  Это содержимое покрываем паддингом-барром.*/
+
+    box-sizing: border-box;
+    padding-bottom: 294px; /*требуемая высота карты минус высота слайдера, 841−547=294*/
   }
 
   .content_own {
@@ -117,18 +119,5 @@
     border: #5fcc89 1px dashed;
 
   }
-
-  /*.this-one-news__carusel {*/
-  /*    width: 996px !important;*/
-  /*    height: 548px !important;*/
-
-  /*    margin: 0 auto;*/
-  /*    border: #482ca1 1px dashed;*/
-  /*    @media (max-width: 1350px) {*/
-  /*      width: 697px !important;*/
-  /*      height: 383px !important;*/
-  /*    }*/
-  /*  }*/
-
 
 </style>
